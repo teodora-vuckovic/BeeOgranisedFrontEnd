@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BeeOrganised</string>
+    <string name="title_activity_worker">WorkerActivity</string>
+    <string-array name="whenList">
+        <item>Morning</item>
+        <item>Afternoon</item>
+        <item>Evening</item>
+        <item>Night Work</item>
+    </string-array>
+
+
+    <string-array name="priorityList">
+        <item>Must</item>
+        <item>Have to</item>
+        <item>Should</item>
+        <item>Whenever</item>
+    </string-array>
+
+    <string name="FinalTextForSimple">This is given calculated time, if it dont suits you, feel free to calculate it again! </string>
+    <string name="title_activity_loading_screen">loading_screen</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

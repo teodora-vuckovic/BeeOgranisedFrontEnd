@@ -24,6 +24,23 @@
         <entry key="..\:/BeeOrganised/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.30085470085470084" />
         <entry key="..\:/BeeOrganised/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
         <entry key="..\:/BeeOrganised/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/daynight.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_basictask.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_clockam.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_clockpm.xml" value="0.176" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_mesecpoz.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_mesecpoz_fixed.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_repeatingtask.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_sunce.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/ic_suncepoz_fixed.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/drawable/suncemesec.xml" value="0.2703125" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/layout-v21/activity_worker.xml" value="0.176" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/layout/activity_loading_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/layout/activity_main.xml" value="0.21875" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/layout/fragment_first2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/layout/fragment_second.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Teodora/Desktop/BeeOrganised/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.264" />
       </map>
     </option>
   </component>

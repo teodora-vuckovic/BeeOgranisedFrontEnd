@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Widget.Theme.BeeOrganised.ActionBar.Fullscreen" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.BeeOrganised.ButtonBar.Fullscreen" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+</resources>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WorkerActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_main_bg"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/datumHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/BehindCalendar"
+
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/prviHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp">
+
+
+                <ImageButton
+                    android:id="@+id/datumPrvi"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/ic_datum"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/firstDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="10dp"
+                    android:text="19"
+                    android:fontFamily="@font/brojke"
+                    android:textColor="@color/DateColor"
+                    android:textSize="20sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/firstWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="WED"
+                    android:textColor="@color/DateColor"
+                    android:textSize="10sp"
+                    android:textFontWeight="1000"
+                    android:fontFamily="@font/font"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/drugiHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp">
+
+                <ImageButton
+                    android:id="@+id/datumDrugi"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/ic_datum"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/secondDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="10dp"
+                    android:text="20"
+                    android:fontFamily="@font/brojke"
+                    android:textColor="@color/DateColor"
+                    android:textSize="20sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/secondWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="WED"
+                    android:textColor="@color/DateColor"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/font"
+                    android:textFontWeight="1000"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/treciHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp">
+
+                <ImageButton
+                    android:id="@+id/datumTreci"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/ic_datum"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/thirdDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="10dp"
+                    android:text="21"
+                    android:fontFamily="@font/brojke"
+                    android:textColor="@color/DateColor"
+                    android:textSize="20sp"
+
+                     />
+
+                <TextView
+                    android:id="@+id/thirdWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="WED"
+                    android:textColor="@color/DateColor"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/font"
+                    android:textFontWeight="1000"/>
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/datumHolder"
+            android:background="@color/BehindCalendar">
+
+
+            <ImageButton
+                android:id="@+id/datumCetvrti"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_kalendar"
+                android:onClick="otvoriKalendar"
+                android:transitionName="transition_calendar"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/MainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/DateColor"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="expandButtons"
+            android:src="@drawable/ic_baseline_add_24"
+            android:tint="@color/white"
+            app:backgroundTint="@color/BeeText"
+            app:rippleColor="@color/UserChosing"
+
+
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/SimpleButton"
+            android:visibility="invisible"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/BeeText"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="@color/UserChosing"
+            app:rippleColor="@color/UserChosing"
+            android:layout_above="@id/MainButton"
+            android:onClick="simpleTaskCard"
+
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/RoutineButton"
+            android:visibility="invisible"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/BeeText"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="@color/UserChosing"
+            app:rippleColor="@color/UserChosing"
+            android:layout_above="@id/SimpleButton"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/taskLinearHolderId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/BeeText"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            android:orientation="vertical"
+
+            >
+            <TextView
+                android:id="@+id/SimpleTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BASIC TASK"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:background="@color/black"/>
+
+            <EditText
+                android:id="@+id/enterTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the name of your task! "/>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</FrameLayout>

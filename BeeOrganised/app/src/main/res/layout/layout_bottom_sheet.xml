@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/font"
         android:textSize="17sp"
-        android:text="Or choose from remembered names:"/>
+        android:text="   Or choose from remembered names:"/>
 
     <RadioGroup
         android:id="@+id/RadioGroup"
@@ -55,7 +55,8 @@
             android:id="@+id/ManualTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose time"
+            android:buttonTint="@color/BehindCalendar"
+            android:text="Custom time"
             android:fontFamily="@font/font"
             android:layout_marginRight="25dp"/>
 
@@ -63,6 +64,7 @@
             android:id="@+id/AiTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/BehindCalendar"
             android:text="AI time choosing"
             android:fontFamily="@font/font"/>
 
@@ -116,6 +118,8 @@
             android:id="@+id/whenSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+
             android:entries="@array/priorityList"/>
 
 
@@ -123,6 +127,7 @@
             android:id="@+id/prioritySpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
             android:entries="@array/whenList"/>
 
     </LinearLayout>
@@ -138,7 +143,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_for_btn"
+        android:backgroundTint="@color/BehindCalendar"
         android:text="Calculate"
+        android:fontFamily="@font/font"
         android:visibility="gone"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/UserChosing">
+
+
+    <RelativeLayout
+        android:id="@+id/welcomeHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp">
+
+        <TextView
+            android:id="@+id/welcomeTxt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:padding="1dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/BeeText"
+            android:text="Welcome to "
+            android:textFontWeight="1000"
+            android:textSize="25dp"
+            />
+        <TextView
+            android:id="@+id/welcomeTxt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BeeOranised!"
+            android:textSize="27sp"
+            android:textFontWeight="1000"
+            android:fontFamily="@font/font"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/welcomeTxt1"
+            android:textColor="@color/BeeText"
+
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/welcomeTxt2">
+
+            <ImageView
+                android:id="@+id/beePath"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_bee_path" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/userSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeHolder">
+
+        <TextView
+            android:id="@+id/txtUserSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/font"
+            android:text="What will your user type bee?"
+            android:textFontWeight="1000"
+            android:textColor="@color/BeeText"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userSelector"
+        android:layout_marginTop="45dp"
+        >
+
+
+        <ImageButton
+
+            android:id="@+id/personalUse"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_personal_use"
+
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <LinearLayout
+            android:id="@+id/parentchildHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/personalUse"
+            android:layout_centerHorizontal="true">
+
+            <ImageButton
+                android:id="@+id/child"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:background="@drawable/ic_child"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/parent"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/ic_parent"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

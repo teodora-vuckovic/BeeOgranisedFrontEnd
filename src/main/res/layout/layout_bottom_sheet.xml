@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_for_tasks"
+    android:orientation="vertical">
+
+
+
+
+    <TextView
+        android:id="@+id/SimpleTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BASIC TASK"
+        android:textSize="23sp"
+        android:layout_marginTop="13dp"
+
+        android:fontFamily="@font/font"
+        android:gravity="center"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="@color/black"/>
+
+    <EditText
+        android:id="@+id/enterTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font"
+        android:hint="Enter the name of your task! "/>
+
+    <TextView
+        android:id="@+id/rememberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font"
+        android:textSize="17sp"
+        android:text="Or choose from remembered names:"/>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+
+        <RadioButton
+            android:id="@+id/ManualTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose time"
+            android:fontFamily="@font/font"
+            android:layout_marginRight="25dp"/>
+
+        <RadioButton
+            android:id="@+id/AiTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI time choosing"
+            android:fontFamily="@font/font"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ManualTimeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <Button
+            android:id="@+id/fromTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/DateColor"
+            android:text="Starting time"
+            android:textSize="17sp"
+            android:fontFamily="@font/brojke"
+            android:layout_marginRight="30dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            />
+        <Button
+            android:id="@+id/toTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/DateColor"
+            android:text="Ending time"
+            android:textSize="17sp"
+            android:fontFamily="@font/brojke"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/AiTimeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone">
+
+
+
+        <Spinner
+            android:id="@+id/whenSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/priorityList"/>
+
+
+        <Spinner
+            android:id="@+id/prioritySpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/whenList"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="7dp"
+        android:background="@color/black"/>
+
+    <Button
+        android:id="@+id/CalculateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_for_btn"
+        android:text="Calculate"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/AfterBtnClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:text="@string/FinalTextForSimple"
+            android:textSize="17sp"
+            android:fontFamily="@font/font"
+            />
+
+        <LinearLayout
+            android:layout_width="500px"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:text="15:25"
+                android:textSize="25sp"
+                android:fontFamily="@font/brojke"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:text="until"
+                android:textSize="13sp"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:text="17:25"
+                android:textSize="25sp"
+                android:fontFamily="@font/brojke"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="7dp"
+        android:background="@color/black"/>
+
+
+
+
+
+
+
+</LinearLayout>
