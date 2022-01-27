@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
-        setLocale("en");
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -74,8 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
+        setLocale("en");
 
     }
     private void setLocale( String lng){
@@ -83,8 +81,14 @@ public class MainActivity extends AppCompatActivity {
         Locale.setDefault(locale);
         Configuration con = new Configuration();
         con.locale = locale;
+
         getBaseContext().getResources().updateConfiguration(con, getBaseContext().getResources().getDisplayMetrics());
+
         getApplicationContext().getResources().updateConfiguration(con, getApplicationContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("my lan", lng);
+        editor.apply();
     }
     private void goToPersonal(){
         Intent intent = new Intent(MainActivity.this, WorkerActivity.class);

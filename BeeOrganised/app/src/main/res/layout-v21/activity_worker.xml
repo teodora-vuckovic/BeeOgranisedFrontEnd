@@ -361,6 +361,7 @@
                 android:background="@drawable/ic_edit_icon" />
 
             <ImageButton
+                android:id="@+id/color"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical"

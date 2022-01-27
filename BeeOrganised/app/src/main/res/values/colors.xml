@@ -15,6 +15,21 @@
     <color name="ColorForClicked">#d9a260</color>
 
 
+    <color name="redpick">#B3f5806f</color>
+    <color name="orangepick">#B3f2be6b</color>
+    <color name="yellowpick">#B3F4D66F</color>
+    <color name="greenpick">#B3add06c</color>
+    <color name="bluepick">#B36ecef4</color>
+    <color name="dbluepick">#B37f80c0</color>
+    <color name="purplepick">#B3ba79b3</color>
+
+    <color name="redpickb">#f5806f</color>
+    <color name="orangepickb">#f2be6b</color>
+    <color name="yellowpickb">#F4D66F</color>
+    <color name="greenpickb">#add06c</color>
+    <color name="bluepickb">#6ecef4</color>
+    <color name="dbluepickb">#7f80c0</color>
+    <color name="purplepickb">#ba79b3</color>
 
 
     <color name="Gray">#888</color>

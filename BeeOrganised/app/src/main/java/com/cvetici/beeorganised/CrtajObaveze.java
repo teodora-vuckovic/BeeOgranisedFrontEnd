@@ -2,6 +2,7 @@ package com.cvetici.beeorganised;
 
 
 import android.app.Activity;
+import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -40,7 +41,7 @@ import java.util.Random;
 public class CrtajObaveze extends View {
     private int height,width=0;
     private int radius=0;
-    private Paint paint,paint1,bela;
+    private Paint paint, paint1, bela, paintest;
     private boolean isInit=false;
     private RectF oval;
     private List<Task> listaTaskova;
@@ -58,11 +59,29 @@ public class CrtajObaveze extends View {
     private SmartToDo std;
     private Task tasknow;
     private int[] boje = {
-            getResources().getColor(R.color.UserChosing)
+            getResources().getColor(R.color.redpick),
+            getResources().getColor(R.color.orangepick),
+            getResources().getColor(R.color.yellowpick),
+            getResources().getColor(R.color.greenpick),
+            getResources().getColor(R.color.bluepick),
+            getResources().getColor(R.color.dbluepick),
+            getResources().getColor(R.color.purplepick)
     };
+    private int[] bojeb = {
+            getResources().getColor(R.color.redpickb),
+            getResources().getColor(R.color.orangepickb),
+            getResources().getColor(R.color.yellowpickb),
+            getResources().getColor(R.color.greenpickb),
+            getResources().getColor(R.color.bluepickb),
+            getResources().getColor(R.color.dbluepickb),
+            getResources().getColor(R.color.purplepickb)
+    };
+
     private View WorkerActivity;
-    Dialog dialogdel;
+    private ImageButton checkbx, color, red, orange, yellow, green, blue, dblue, purple;
     private ImageView check;
+    private Button cancel, del;
+    Dialog dialogdel, dialogcol;
 
 
     public CrtajObaveze(Context context) {
@@ -82,18 +101,20 @@ public class CrtajObaveze extends View {
     }
     private void initClock(){
         std = new SmartToDo(5);
-
+        paintest = new Paint();
+        paintest.setColor(getResources().getColor(R.color.yellowpick));
         taskName = ((Activity)context).findViewById(R.id.imeTaska);
         startingTime=((Activity)context).findViewById(R.id.startingTime);
         endingTime = ((Activity)context).findViewById(R.id.endingTime);
         height = getHeight();
         width = getWidth();
+        dialogcol = new Dialog((Activity)context);
         int min = Math.min(height,width);
         radius = min/2;
         paint = new Paint();
         paint1 = new Paint();
         bela = new Paint();
-        bela.setColor(getResources().getColor(R.color.ProzirnaDate));
+        bela.setColor(getResources().getColor(R.color.yellowpickb));
         taskChangerLayout = ((Activity)context).findViewById(R.id.changeTask);
         isInit=true;
         osnovaKruga = new RectF(80, 80, width - 80, height - 80);
@@ -102,15 +123,148 @@ public class CrtajObaveze extends View {
         animacijaZatvaranja = AnimationUtils.loadAnimation(context,R.anim.polako_zatvori);
 
         load();
+        postaviboje();
         std.setTasks((ArrayList<Task>) mainList);
 
         bin = (ImageButton) ((Activity)context).findViewById(R.id.delete);
         check = ((Activity)context).findViewById(R.id.check);
+        color = (ImageButton) ((Activity) context).findViewById(R.id.color);
+        opencolor();
 
     }
 
 
+    private void opencolor() {
+        color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogcol.setContentView(R.layout.colorpicker);
+                dialogcol.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                red = (ImageButton) dialogcol.findViewById(R.id.red);
+                orange = (ImageButton) dialogcol.findViewById(R.id.orange);
+                yellow = (ImageButton) dialogcol.findViewById(R.id.yellow);
+                green = (ImageButton) dialogcol.findViewById(R.id.green);
+                blue = (ImageButton) dialogcol.findViewById(R.id.blue);
+                dblue = (ImageButton) dialogcol.findViewById(R.id.dblue);
+                purple = (ImageButton) dialogcol.findViewById(R.id.purple);
+                itsred();
+                itsorange();
+                itsyellow();
+                itsgreen();
+                itsblue();
+                itsdblue();
+                itspurple();
+                dialogcol.show();
 
+            }
+        });
+
+    }
+
+    private void itsred() {
+        red.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paintest.setColor(boje[0]);
+                bela.setColor(bojeb[0]);
+                sacuvajboje(0);
+                tasknow.SetNewColor(paintest);
+                Refreshuj();
+                dialogcol.dismiss();
+            }
+        });
+
+    }
+
+    private void itsorange() {
+        orange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paintest.setColor(boje[1]);
+                bela.setColor(bojeb[1]);
+                sacuvajboje(1);
+                tasknow.SetNewColor(paintest);
+                Refreshuj();
+                dialogcol.dismiss();
+            }
+        });
+
+    }
+
+    private void itsyellow() {
+        yellow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paintest.setColor(boje[2]);
+                bela.setColor(bojeb[2]);
+                sacuvajboje(2);
+                tasknow.SetNewColor(paintest);
+                Refreshuj();
+                dialogcol.dismiss();
+            }
+        });
+
+    }
+
+    private void itsgreen() {
+        green.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paintest.setColor(boje[3]);
+                bela.setColor(bojeb[3]);
+                sacuvajboje(3);
+                tasknow.SetNewColor(paintest);
+                Refreshuj();
+                dialogcol.dismiss();
+            }
+        });
+
+    }
+
+    private void itsblue() {
+        blue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogcol.dismiss();
+                paintest.setColor(boje[4]);
+                bela.setColor(bojeb[4]);
+                sacuvajboje(4);
+                tasknow.SetNewColor(paintest);
+                Refreshuj();
+            }
+        });
+
+    }
+
+    private void itsdblue() {
+        dblue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogcol.dismiss();
+                paintest.setColor(boje[5]);
+                bela.setColor(bojeb[5]);
+                sacuvajboje(5);
+                tasknow.SetNewColor(paintest);
+                Refreshuj();
+            }
+        });
+
+    }
+
+    private void itspurple() {
+        purple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paintest.setColor(boje[6]);
+                bela.setColor(bojeb[6]);
+                sacuvajboje(6);
+                tasknow.SetNewColor(paintest);
+                Refreshuj();
+                dialogcol.dismiss();
+            }
+        });
+
+    }
 
 
     @Override
@@ -121,8 +275,8 @@ public class CrtajObaveze extends View {
         if(listaTaskova!=null) {
 
             for(Task item:listaTaskova) {
-                paint.setColor(boje[0]);
-                paint1.setColor(Color.RED);
+                paint.setColor(paintest.getColor());
+                paint1.setColor(getResources().getColor(R.color.BeeText));
                 float hour1 =item.GetTime().GetStartTime().GetHour();
                 float minute1 = item.GetTime().GetStartTime().GetMinute();
                 float hour2 =item.GetTime().GetEndTime().GetHour();
@@ -139,9 +293,9 @@ public class CrtajObaveze extends View {
                     float angle2 = (float) ((Math.PI / 6) * loc2 - Math.PI / 2) - angle1;
                     angle2 = (float) (180 * angle2 / Math.PI);
                     angle1 = (float) (180 * angle1 / Math.PI);
-                    canvas.drawArc(osnovaKruga, angle1, angle2 , true, paint);
-                    canvas.drawArc(osnovaKruga,angle1,1,true,bela);
-                    canvas.drawArc(osnovaKruga,angle2+angle1-1,1,true,bela);
+                    canvas.drawArc(osnovaKruga, angle1, angle2 , true,paint);
+                    canvas.drawArc(osnovaKruga,angle1,2,true,bela);
+                    canvas.drawArc(osnovaKruga,angle2+angle1-1,2,true,bela);
                     clickListener(angle1,angle2,canvas,item);
 
 
@@ -156,8 +310,8 @@ public class CrtajObaveze extends View {
                     angle2 = (float) (180 * angle2 / Math.PI);
                     angle1 = (float) (180 * angle1 / Math.PI);
                     canvas.drawArc(osnovaKruga, angle1 , angle2 , true, paint);
-                    canvas.drawArc(osnovaKruga,angle1,1,true,bela);
-                    canvas.drawArc(osnovaKruga,angle2+angle1-1,1,true,bela);
+                    canvas.drawArc(osnovaKruga,angle1,2,true,bela);
+                    canvas.drawArc(osnovaKruga,angle2+angle1-1,2,true,bela);
                     clickListener(angle1,angle2,canvas,item);
 
                 }
@@ -185,7 +339,7 @@ public class CrtajObaveze extends View {
             float angle1 = (float) ((Math.PI / 6) * loc1 - Math.PI / 2);
             float angle3 = (float) ((Math.PI / 6) * 11.99f - Math.PI / 2)-angle1;
             canvas.drawArc(osnovaKruga, (float) (180 * angle1 / Math.PI), (float) (180 * angle3 / Math.PI), true, paint);
-            canvas.drawArc(osnovaKruga, (float) (180 * angle1 / Math.PI), (float) 1, true, bela);
+            canvas.drawArc(osnovaKruga, (float) (180 * angle1 / Math.PI), (float) 2, true, bela);
             clickListener((float)(180 * angle1 / Math.PI),(float)(180 * angle3 / Math.PI),canvas,item);
         }
     }
@@ -229,13 +383,13 @@ public class CrtajObaveze extends View {
         }
 
         if(IsTouched&&angle1<=touchAngle&&touchAngle<=angle2+angle1 ){
+            tasknow = current;
             IsTouched = false;
             canvas.drawArc(osnovaKruga,(float) angle1, (float) angle2,true,paint1);
             taskName.setText(current.GetTitle());
             startingTime.setText(current.GetTime().GetStartTime().ToStringTime());
             endingTime.setText(current.GetTime().GetEndTime().ToStringTime());
             changeTaskColor();
-            tasknow = current;
             if(tasknow.GetDone()){
                 check.setVisibility(View.VISIBLE);
             }else{
@@ -245,6 +399,18 @@ public class CrtajObaveze extends View {
 
 
     }
+    public void sacuvajboje(int boja){
+        SharedPreferences.Editor editor = context.getSharedPreferences("BOJE", Context.MODE_PRIVATE).edit();
+        editor.putInt("boja", boja);
+        editor.apply();
+    }
+    public void postaviboje(){
+        SharedPreferences prefs = context.getSharedPreferences("BOJE", Context.MODE_PRIVATE);
+        int boja = prefs.getInt("boja",3);
+        sacuvajboje(boja);
+    }
+
+
     public void load(){
         String FILE_NAME="taskLists";
         SharedPreferences sharedPreferences = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
