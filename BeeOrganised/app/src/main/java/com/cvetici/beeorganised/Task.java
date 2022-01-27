@@ -1,5 +1,8 @@
 package com.cvetici.beeorganised;
 
+import android.graphics.Color;
+import android.graphics.Paint;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import android.graphics.Color;
@@ -11,6 +14,7 @@ public class Task
     //protected String desc;
     protected Paint color;
     public Interval time;
+    protected Paint color;
     public boolean done = false;
     public Routine routine = null;
 
@@ -26,6 +30,7 @@ public class Task
     }
     public Paint GetColor(){return color;}
 
+    public void SetNewColor(Paint color) { this.color = color; }
     public void SetNewTime(Interval time) { this.time = time; }
     public void SetNewColor(Paint color) { this.color = color; }
     public void SetTitle(String title) { this.title = title; }
